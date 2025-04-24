@@ -18,7 +18,7 @@ PLAYER_SPEED       = 600
 BULLET_SPEED       = 400
 ENEMY_SPEED        = 300
 SHOOT_DELAY        = 2000
-ENEMY_SPAWN_DELAY  = 2000  # ms
+ENEMY_SPAWN_DELAY  = 1000  # ms
 
 # delta time global
 DELTA = 0.0
@@ -82,8 +82,7 @@ def main():
     enemies = []
     spawn_timer = 0
 
-    running = True
-    while running:
+    while player:
         dt_ms = clock.tick(60)
         global DELTA
         DELTA = dt_ms / 1000.0
