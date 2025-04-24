@@ -1,0 +1,90 @@
+[NEAT]
+# Population size (number of genomes per generation)
+pop_size              = 100
+# Whether to reset if all species go extinct
+reset_on_extinction   = False
+# Fitness is maximized
+fitness_criterion     = max
+# Optional threshold to stop once reached
+fitness_threshold     = 1000.0
+
+[DefaultGenome]
+# node activation options
+activation_default      = sigmoid
+activation_mutate_rate  = 0.0
+activation_options      = sigmoid
+
+# node aggregation options
+aggregation_default     = sum
+aggregation_mutate_rate = 0.0
+aggregation_options     = sum
+
+# bias parameters
+bias_init_mean          = 0.0
+bias_init_stdev         = 1.0
+bias_max_value          = 30.0
+bias_min_value          = -30.0
+bias_mutate_power       = 0.3
+bias_mutate_rate        = 0.3
+bias_replace_rate       = 0.1
+
+# compatibility (speciation) coefficients
+compatibility_disjoint_coefficient = 1.0
+compatibility_weight_coefficient   = 0.5
+
+# connection add/remove rates
+conn_add_prob           = 0.3
+conn_delete_prob        = 0.3
+
+# whether new connections are enabled by default and mutate rate
+enabled_default         = True
+enabled_mutate_rate     = 0.01
+
+# feed-forward only (no recurrence)
+feed_forward            = True
+initial_connection      = full_direct
+
+# node add/remove rates
+node_add_prob           = 0.1
+node_delete_prob        = 0.1
+
+# network structure
+num_hidden              = 0
+num_inputs              = 5
+num_outputs             = 3
+
+# response parameters (usually left at defaults)
+response_init_mean      = 1.0
+response_init_stdev     = 0.0
+response_max_value      = 30.0
+response_min_value      = -30.0
+response_mutate_power   = 0.0
+response_mutate_rate    = 0.0
+response_replace_rate   = 0.0
+
+# connection weight mutation options
+weight_init_mean        = 0.0
+weight_init_stdev       = 1.0
+weight_max_value        = 30.0
+weight_min_value        = -30.0
+weight_mutate_power     = 0.3
+weight_mutate_rate      = 0.5
+weight_replace_rate     = 0.1
+
+[DefaultSpeciesSet]
+# Species grouping threshold
+compatibility_threshold = 2.5
+
+[DefaultStagnation]
+# Species fitness function for stagnation checks
+species_fitness_func    = max
+# Generations without improvement before species removal
+max_stagnation          = 15
+# Number of species protected from stagnation removal
+species_elitism         = 3
+
+[DefaultReproduction]
+# Number of top genomes preserved each generation
+elitism                 = 5
+# Fraction of each species allowed to reproduce
+survival_threshold      = 0.3
